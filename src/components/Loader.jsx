@@ -1,9 +1,9 @@
-import infinity from "../assets/infinity.svg";
-
-function Loader() {
+import loadingDark from "../assets/ring-dark.svg";
+import loadingLight from "../assets/ring-light.svg";
+function Loader(darkMode) {
   return (
     <div className="flex justify-center">
-      <img src={infinity} alt="" />
+      <img src={darkMode ? loadingDark : loadingLight} alt="" />
     </div>
   );
 }

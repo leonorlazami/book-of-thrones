@@ -4,7 +4,7 @@ function Quotes({ quotes }) {
       {quotes.map((quote, index) => {
         return (
           <div
-            className="border border-black mx-6 my-5 w-auto px-5 py-3 flex flex-col font-primary md:text-xl text-bg-dark  bg-tertiary "
+            className="border dark:border-black mx-6 my-5 w-auto px-5 py-3 flex flex-col dark:rounded-none font-primary md:text-xl dark:text-bg-dark  dark:bg-tertiary bg-tertiary-light rounded-md text-secondary-light"
             key={index}
           >
             <div className="flex flex-col">

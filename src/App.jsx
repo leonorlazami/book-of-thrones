@@ -9,6 +9,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [quotes, setQuotes] = useState([]);
   const [typeOfContent, setTypeOfContent] = useState("books");
+  const [toggleDark, setIsDark] = useState(false);
   const sortedBooks =
     sorting === "descending"
       ? [...books].sort((a, b) => new Date(b.released) - new Date(a.released))
@@ -18,6 +19,9 @@ function App() {
       ? [...books].sort((a, b) => a.numberOfPages - b.numberOfPages)
       : [...books];
 
+  function toggleMode() {
+    setIsDark((prev) => !prev);
+  }
   function getBooks() {
     setIsLoading(true);
     fetch("https://www.anapioficeandfire.com/api/books?pageSize=30")
@@ -41,22 +45,26 @@ function App() {
   }
   console.log("books", books);
   return (
-    <>
-      <Header
-        onFetchBooks={getBooks}
-        onFetchQuotes={getQuotes}
-        sorting={sorting}
-        setSorting={setSorting}
-        typeOfContent={typeOfContent}
-      />
-      {isLoading ? (
-        <Loader />
-      ) : typeOfContent === "books" ? (
-        <Main books={books} sortedBooks={sortedBooks} />
-      ) : (
-        <Quotes quotes={quotes} />
-      )}
-    </>
+    <div className={toggleDark ? "dark" : ""}>
+      <div className="dark:bg-bg-dark h-screen bg-white">
+        <Header
+          onFetchBooks={getBooks}
+          onFetchQuotes={getQuotes}
+          sorting={sorting}
+          setSorting={setSorting}
+          typeOfContent={typeOfContent}
+          toggleMode={toggleMode}
+          darkMode={toggleDark}
+        />
+        {isLoading ? (
+          <Loader darkMode={toggleDark} />
+        ) : typeOfContent === "books" ? (
+          <Main books={books} sortedBooks={sortedBooks} />
+        ) : (
+          <Quotes quotes={quotes} />
+        )}
+      </div>
+    </div>
   );
 }
 

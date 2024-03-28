@@ -2,7 +2,7 @@ import Book from "./Book";
 
 function Main({ books, sortedBooks }) {
   return (
-    <div className="flex flex-col md:grid md:grid-cols-3 md:w-full px-14 ">
+    <div className="flex flex-col md:grid md:grid-cols-3 md:w-full px-14 dark:bg-bg-dark bg-white ">
       {books &&
         sortedBooks.map((book, index) => {
           const { name, country, numberOfPages } = book;
