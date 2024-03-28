@@ -24,7 +24,7 @@ function Header({ onFetchBooks, setSorting, onFetchQuotes, typeOfContent }) {
         <button
           onClick={onFetchBooks}
           className={`border border-secondary px-2 md:text-xl py-1 mr-2 relative ${
-            typeOfContent === "quotes" ? "left-14" : ""
+            typeOfContent === "quotes" ? "left-16" : ""
           }`}
         >
           Fetch data

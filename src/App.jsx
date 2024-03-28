@@ -41,7 +41,7 @@ function App() {
   }
   console.log("books", books);
   return (
-    <div>
+    <>
       <Header
         onFetchBooks={getBooks}
         onFetchQuotes={getQuotes}
@@ -56,7 +56,7 @@ function App() {
       ) : (
         <Quotes quotes={quotes} />
       )}
-    </div>
+    </>
   );
 }
 
