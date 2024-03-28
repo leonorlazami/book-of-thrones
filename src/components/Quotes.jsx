@@ -1,6 +1,6 @@
 function Quotes({ quotes }) {
   return (
-    <div className="mx-10 md:grid md:grid-cols-3 h-auto flex flex-col gap-4">
+    <div className="mx-10 md:grid md:grid-cols-3 h-[100%] flex flex-col gap-4 dark:bg-bg-dark">
       {quotes.map((quote, index) => {
         return (
           <div

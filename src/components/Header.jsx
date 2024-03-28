@@ -52,7 +52,10 @@ function Header({
             <option value="ascending">Ascending</option>
           </select>
         </div>
-        <button onClick={toggleMode}>
+        <button
+          onClick={toggleMode}
+          className={`${typeOfContent === "quotes" ? "right-16" : ""} relative`}
+        >
           {darkMode ? <GoSun size={25} /> : <GoMoon size={30} color="" />}
         </button>
       </div>
