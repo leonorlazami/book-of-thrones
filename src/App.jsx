@@ -45,8 +45,8 @@ function App() {
   }
   console.log("books", books);
   return (
-    <div className={toggleDark ? "dark" : ""}>
-      <div className="dark:bg-bg-dark md:h-screen h-[100%] bg-white">
+    <div className={`${toggleDark ? "dark" : ""} `}>
+      <div className="dark:bg-bg-dark md:h-screen h-[100%] bg-white transition-all duration-300">
         <Header
           onFetchBooks={getBooks}
           onFetchQuotes={getQuotes}
